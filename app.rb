@@ -1,4 +1,4 @@
-require("sinatrta")
+require("sinatra")
 require("sinatra/reloader")
 require("./lib/task")
 also_reload("lib/**/*.rb")
@@ -8,7 +8,7 @@ get("/") do
   erb(:index)
 end
 
-post("/tasks") do
+post("/results") do
   description = params.fetch("description")
   task = Task.new(description)
   task.save()
